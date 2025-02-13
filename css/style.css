@@ -211,5 +211,5 @@ figcaption::after {
   text-align: center;
 }
 .heartfelt .valentine {
-  font-size: 10rem;
+  font-size: minmax(10rem, 100%);
 }

@@ -1,8 +1,10 @@
 :root {
-  --red: #CC3E28;
-  --bg: #F2EEDE;
+  --red: #cc3e28;
+  --bg: #f2eede;
 }
-:root, html, body {
+:root,
+html,
+body {
   margin: 0;
   height: 0;
   background-color: black;
@@ -10,21 +12,32 @@
 }
 /*fonts*/
 @font-face {
-    font-family: daysoflove;
-    src: url("../assets/fonts/Days\ of\ Love.ttf");
+  font-family: daysoflove;
+  src: url("../assets/fonts/Days\ of\ Love.ttf");
 }
 
 @font-face {
-    font-family: heligthon;
-    src: url("../assets/fonts/Heligthon\ Signature.otf");
+  font-family: heligthon;
+  src: url("../assets/fonts/Heligthon\ Signature.otf");
 }
 img {
   width: 100%;
   height: auto;
+  max-height: 30rem;
+  object-fit: contain;
+  margin: 2rem;
+  transition: all 250ms ease-in-out;
+}
+img:hover {
+  transform: scale(1.1);
+  /*border: 1px white dotted;*/
+  /*padding-top: 1rem;*/
+  /*padding-bottom: 5rem;*/
+  /*background-color: #ffa;*/
 }
 
 .header__heart {
-  height: 50vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +55,7 @@ img {
   stroke-linecap: butt;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
-  stroke-dasharray:none;
+  stroke-dasharray: none;
   stroke-opacity: 1;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
@@ -80,7 +93,7 @@ img {
   }
   75% {
     opacity: 1;
-    transform: scale(1.0);
+    transform: scale(1);
   }
   80% {
     opacity: 1;
@@ -88,11 +101,11 @@ img {
   }
   85% {
     opacity: 1;
-    transform: scale(1.0);
+    transform: scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(1.0);
+    transform: scale(1);
   }
 }
 
@@ -101,8 +114,6 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 iframe {
   width: 70%;
@@ -114,14 +125,26 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10vw;
+  margin: 5vw;
   padding: 0;
 
-  background-color: var(--bg);
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 
+  /* background stripes */
+  background: var(--bg);
+  /*https://css-pattern.com/graph-paper/*/
+  --s: 5rem; /* control the size*/
+  --c1: var(--bg);
+  --c2: var(--bg);
+  --_g: #ffffff 90deg, var(--c1) 0;
+  background:
+    conic-gradient(from 90deg at 2px 2px, var(--_g)),
+    conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
+  background-size:
+    var(--s) var(--s),
+    calc(var(--s) / 5) calc(var(--s) / 5);
 }
-
-
 
 main {
   font-family: daysoflove;
@@ -131,20 +154,20 @@ main {
   align-items: center;
   padding: 2ch;
 
-  -webkit-box-shadow:0px 0px 174px 45px rgba(204,62,40,0.9);
-  -moz-box-shadow: 0px 0px 174px 45px rgba(204,62,40,0.9);
-  box-shadow: 0px 0px 174px 45px rgba(204,62,40,0.9);
+  -webkit-box-shadow: 0px 0px 174px 45px rgba(204, 62, 40, 0.9);
+  -moz-box-shadow: 0px 0px 174px 45px rgba(204, 62, 40, 0.9);
+  box-shadow: 0px 0px 174px 45px rgba(204, 62, 40, 0.9);
 }
 
-main h1{ 
+main h1 {
   font-family: heligthon;
   font-size: 5rem;
   color: var(--red);
   text-align: center;
-  text-shadow: rgba(255,163,5,0.9) 0px 0px 39px;
+  text-shadow: rgba(255, 163, 5, 0.9) 0px 0px 39px;
 }
 
-main h2{
+main h2 {
   font-size: 2rem;
 }
 main figcaption {
@@ -152,19 +175,19 @@ main figcaption {
 }
 
 figure {
-  width: 40vw;
+  width: 70vw;
 }
 
 figcaption::after {
-  content: '';
+  content: "";
   position: relative;
-  top: 0; 
-  left: 25%;
+  top: 0;
+  left: 40%;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   height: 10rem;
   width: 10rem;
 
@@ -174,3 +197,19 @@ figcaption::after {
   transform: translateX(-50%) rotate(90deg); /* Tilt the SVG */
 }
 
+.fig-two {
+  display: flex;
+  flex-wrap: wrap;
+  img {
+    width: 48%;
+    margin: 1%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+}
+.heartfelt {
+  text-align: center;
+}
+.heartfelt .valentine {
+  font-size: 10rem;
+}

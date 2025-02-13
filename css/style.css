@@ -1,8 +1,36 @@
+:root {
+  --red: #CC3E28;
+  --bg: #F2EEDE;
+}
+:root, html, body {
+  margin: 0;
+  height: 0;
+  background-color: black;
+  background-image: url("../assets/img/heart.gif");
+}
+/*fonts*/
+@font-face {
+    font-family: daysoflove;
+    src: url("../assets/fonts/Days\ of\ Love.ttf");
+}
+
+@font-face {
+    font-family: heligthon;
+    src: url("../assets/fonts/Heligthon\ Signature.otf");
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
 .header__heart {
-  height: 30vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  backdrop-filter: blur(1rem);
+  margin-bottom: 2rem;
 }
 .header__heart svg {
   overflow: visible;
@@ -66,5 +94,83 @@
     opacity: 0;
     transform: scale(1.0);
   }
+}
+
+.youtube {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+iframe {
+  width: 70%;
+  height: 20rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vw;
+  padding: 0;
+
+  background-color: var(--bg);
+
+}
+
+
+
+main {
+  font-family: daysoflove;
+  text-align: cetner;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2ch;
+
+  -webkit-box-shadow:0px 0px 174px 45px rgba(204,62,40,0.9);
+  -moz-box-shadow: 0px 0px 174px 45px rgba(204,62,40,0.9);
+  box-shadow: 0px 0px 174px 45px rgba(204,62,40,0.9);
+}
+
+main h1{ 
+  font-family: heligthon;
+  font-size: 5rem;
+  color: var(--red);
+  text-align: center;
+  text-shadow: rgba(255,163,5,0.9) 0px 0px 39px;
+}
+
+main h2{
+  font-size: 2rem;
+}
+main figcaption {
+  font-size: 1.7rem;
+}
+
+figure {
+  width: 40vw;
+}
+
+figcaption::after {
+  content: '';
+  position: relative;
+  top: 0; 
+  left: 25%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  height: 10rem;
+  width: 10rem;
+
+  background-image: url("../assets/img/arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translateX(-50%) rotate(90deg); /* Tilt the SVG */
 }
 
